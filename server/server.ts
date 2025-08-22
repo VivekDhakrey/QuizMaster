@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 import cors from 'cors';
 import multer from 'multer';
 import pdf from 'pdf-parse';
@@ -6,7 +6,7 @@ import { GoogleGenAI, Type } from '@google/genai';
 import 'dotenv/config';
 
 // --- SETUP ---
-const app: express.Application = express();
+const app = express();
 const port = process.env.PORT || 3001;
 const upload = multer({ storage: multer.memoryStorage() });
 
@@ -43,7 +43,7 @@ const responseSchema = {
 };
 
 // --- API ENDPOINT ---
-app.post('/api/generate', upload.single('sourceFile'), async (req: Request, res: Response) => {
+app.post('/api/generate', upload.single('sourceFile'), async (req: express.Request, res: express.Response) => {
     const { numMCQ, numTF, sourceText: bodyText } = req.body;
     const file = req.file;
 
