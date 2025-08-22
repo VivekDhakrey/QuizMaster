@@ -1,0 +1,5 @@
+{
+  "name": "Copy of AI Quiz Creator",
+  "description": "An app that uses an LLM to generate multiple-choice and true/false questions from user-provided text. The output is rendered in a simple web form for educators to review and export.",
+  "requestFramePermissions": []
+}
